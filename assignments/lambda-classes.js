@@ -17,6 +17,13 @@ console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
     this.favLanguage = instructorAttrs.favLanguage;
     this.catchPhrase = instructorAttrs.catchPhrase;
     }
+    demo(subject) {
+        console.log(`Today we are learning about ${subject}`)
+      }
+      grade(student, subject) {
+        console.log(`${this.name} receives a perfect score on ${subject}`);
+      }
+    }
 
     class student extends Person{
     constructor(studentAttrs) {
@@ -27,9 +34,29 @@ console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
     this.grade = studentsAttrs.grade;
     }
     
+
+    listSubjects() {
+        console.log(this.favSubjects);
+    }
+    PRAssignment(subject) {
+      console.log(`${this.name} has submitted a PR for ${subject}`);
+    }
+    sprintChallenge(subject) {
+        console.log(`${this.name} has begun sprint challenge on ${subject}`);
+      }
+    }
+
     class ProjectManager extends instructor{
         constructor(managerAttrs) {
     super(managerAttrs);
     this.gradClassName = managerAttrs.gradClassName;
     this.FavInstructor = managerAttrs.FavInstructor;
     }
+}
+standUp(channel) {
+  console.log(`${this.name} announces to ${channel}, @channel standy times!`);
+}
+debugsCode(student, subject) {
+  console.log(`${this.name} debugs ${student}'s code on ${subject}`);
+}
+}
