@@ -9,8 +9,9 @@ class Person{
     speak() {
 console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
     }
+  }
 
-    class Intructor extends Person{
+  class Intructor extends Person{
         constructor(instructionAttrs){
     super(instructorAttrs);
     this.specialty = instructorAttrs.specialty;
@@ -24,7 +25,6 @@ console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
         console.log(`${this.name} receives a perfect score on ${subject}`);
       }
     }
-
     class student extends Person{
     constructor(studentAttrs) {
     super(studentAttrs);
@@ -46,17 +46,16 @@ console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
       }
     }
 
-    class ProjectManager extends instructor{
+    class ProjectManager extends Instructor {
         constructor(managerAttrs) {
     super(managerAttrs);
     this.gradClassName = managerAttrs.gradClassName;
     this.FavInstructor = managerAttrs.FavInstructor;
     }
-}
 standUp(channel) {
   console.log(`${this.name} announces to ${channel}, @channel standy times!`);
 }
 debugsCode(student, subject) {
   console.log(`${this.name} debugs ${student}'s code on ${subject}`);
-}
+};
 }
