@@ -7,42 +7,44 @@ class Person{
         this.gender = personAttrs.gender;
     }
     speak() {
-console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
+return( `Hello my name is ${this.name}, I am from ${this.location}`);
     }
   }
 
-  class Intructor extends Person{
-        constructor(instructionAttrs){
+  class Instructor extends Person{
+        constructor(instructorAttrs){
     super(instructorAttrs);
     this.specialty = instructorAttrs.specialty;
     this.favLanguage = instructorAttrs.favLanguage;
     this.catchPhrase = instructorAttrs.catchPhrase;
+    this.student = instructorAttrs.student;
     }
     demo(subject) {
-        console.log(`Today we are learning about ${subject}`)
+        return(`Today we are learning about ${subject}`)
       }
       grade(student, subject) {
-        console.log(`${this.name} receives a perfect score on ${subject}`);
+        return(`${this.name} receives a perfect score on ${subject}`);
       }
     }
-    class student extends Person{
-    constructor(studentAttrs) {
-    super(studentAttrs);
-    this.previousBackground=student.Attrs.perviousBackground;
-    this.className = studentAttrs.className;
-    this.favSubjects=StudentAttrs.FavSubjects;
-    this.grade = studentsAttrs.grade;
+    class Student extends Person{
+    constructor(StudentAttrs) {
+    super(StudentAttrs);
+    this.previousBackground=StudentAttrs.perviousBackground;
+    this.className = StudentAttrs.className;
+    this.favSubjects=StudentAttrs.favSubjects;
+    this.grade = StudentAttrs.grade;
+    this.sprintSubject = StudentAttrs.sprintSubject
     }
     
 
     listSubjects() {
-        console.log(this.favSubjects);
+        return (this.favSubjects);
     }
     PRAssignment(subject) {
-      console.log(`${this.name} has submitted a PR for ${subject}`);
+      return (`${this.name} has submitted a PR for ${this.favSubjects}`);
     }
     sprintChallenge(subject) {
-        console.log(`${this.name} has begun sprint challenge on ${subject}`);
+        return (`${this.name} has begun sprint challenge on ${this.favSubjects}`);
       }
     }
 
@@ -53,9 +55,56 @@ console.log( `Hello my name is ${this.name}, I am from ${this.location}`);
     this.FavInstructor = managerAttrs.FavInstructor;
     }
 standUp(channel) {
-  console.log(`${this.name} announces to ${channel}, @channel standy times!`);
+  return (`${this.name} announces to ${this.channel}, @channel standy times!`);
 }
 debugsCode(student, subject) {
-  console.log(`${this.name} debugs ${student}'s code on ${subject}`);
+  return (`${this.name} debugs ${this.student}'s code on ${this.subject}`);
 };
 }
+const fred = new Instructor({
+  name: 'Fred',
+  location: 'Bedrock',
+  age: 37,
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the homies`
+});
+console.log(fred.speak())
+
+const jeffery = new Student({
+  name:'jeffery',
+  age:25,
+  location:'Tennessee',
+  favLanguage:'french',
+  className:"web24",
+  favSubjects:'English ,science, history',
+  prSubject:'JavaScript IV',
+  sprintSubject:'JavaScript',
+  previousBackground:'gym teacher'
+});
+console.log(jeffery.favSubjects)
+console.log(jeffery.sprintChallenge())
+console.log(jeffery.sprintSubject)
+
+const henry = new ProjectManager({
+  name:'Henry',
+  FavInstructor:'Britt',
+  gradClassName:'web24',
+});
+console.log(henry.FavInstructor)
+console.log(henry.gradClassName)
+console.log(henry.name)
+
+const george = new Instructor({
+name:'george',
+age:35,
+location:'California',
+catchPhrase:'Be Greatful not Hateful',
+favLanguage:'spanish',
+specialty:'debugging code',
+student:'jeffery'
+});
+console.log(george.favLanguage)
+console.log(george.catchPhrase)
+console.log(george.specialty)
+console.log(george.student)
